@@ -19,34 +19,6 @@ import { useEffect, useState } from "react";
 // Inside App component
 
 const App = () => {
-  const [countdown, setCountdown] = useState("");
-
-  useEffect(() => {
-    const targetDate = new Date("2025-05-06T00:00:00");
-
-    const updateCountdown = () => {
-      const now = new Date();
-      const difference = targetDate - now;
-
-      if (difference <= 0) {
-        setCountdown("Now Live!");
-        return;
-      }
-
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / (1000 * 60)) % 60);
-      const seconds = Math.floor((difference / 1000) % 60);
-
-      setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-    };
-
-    updateCountdown(); // Run once initially
-    const timer = setInterval(updateCountdown, 1000); // Update every second
-
-    return () => clearInterval(timer); // Cleanup on unmount
-  }, []);
-
   return (
     <Router>
       <ScrollTop />
@@ -64,10 +36,6 @@ const App = () => {
         <Route path='/cancel' element={<Cancelled />} />
       </Routes>
       <CookieConsent />
-      <div className='banner-1'>
-        <h2>WEBSITE LAUNCH: 6TH MAY! PRE-ORDER NOW - 10% OFF! {countdown}</h2>
-        {/* <span className='loader-timer'></span> */}
-      </div>
       <Cart />
       <Alert />
     </Router>
