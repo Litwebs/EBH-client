@@ -43,13 +43,7 @@ const BalloonGrid = () => {
                 </p>
               )}
               <div className='balloon-footer'>
-                <p className='balloon-price-2'>
-                  £{balloon.price}{" "}
-                  <span className='original-price'>
-                    {/* £{(balloon.price * 1.1).toFixed(2)} */}£
-                    £{Math.round(balloon.price * 1.1)}
-                  </span>
-                </p>
+                <p className='balloon-price-2'>£{balloon.price} </p>
                 <button
                   className='balloon-buy-button'
                   onClick={() => onNav(balloon)}>

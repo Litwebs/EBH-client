@@ -4,7 +4,8 @@
     width: 50px;
     right: 50%;
     bottom: 5rem;
-    background-color: var(--pink-light);
+    background-color: var(--tri);
+
     z-index: 20000;
     display: flex;
     justify-content: center;

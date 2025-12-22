@@ -45,10 +45,9 @@ const BouquetGrid = () => {
               <div className='btn-con'>
                 <p className='bouquet-price-2'>
                   £{bouquet.price}{" "}
-                  <span className='original-price'>
-                    {/* £{(bouquet.price * 1.1).toFixed(2)} */}
+                  {/* <span className='original-price'>
                     £{Math.round(bouquet.price * 1.1)}
-                  </span>
+                  </span> */}
                 </p>
                 <button onClick={() => onNav(bouquet)}>Buy Now</button>
               </div>

@@ -44,10 +44,9 @@ const HBGrid = () => {
               <div className='btn-con'>
                 <p className='bouquet-price-2'>
                   £{product.price}{" "}
-                  <span className='original-price'>
-                    {/* £{(product.price * 1.1).toFixed(2)} */}
+                  {/* <span className='original-price'>
                     £{Math.round(product.price * 1.1)}
-                  </span>
+                  </span> */}
                 </p>
                 <button onClick={() => onNav(product)}>Buy Now</button>
               </div>

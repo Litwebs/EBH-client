@@ -16,7 +16,7 @@
   padding: 12px 24px;
   font-size: 1.2rem;
   background-color: white;
-  border: 1px solid #b08e79;
+  border: 1px solid var(--tri);
   color: #333;
   transition: all 0.3s ease;
   border-radius: 8px;
@@ -26,12 +26,12 @@
 }
 
 .delivery-option-icon {
-  color: #f4c2c2;
+  color: var(--text-2);
 }
 
 /* Primary button gets special color */
 .delivery-primary-button {
-  background-color: #f4c2c2;
+  background-color: var(--primary);
   border: none;
 }
 

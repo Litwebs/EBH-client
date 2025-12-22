@@ -25,7 +25,7 @@ const ScrollTop = () => {
       className={`scroll-top ${showButton ? "show" : ""}`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >
-      <BsArrowUp color="white" size={25} />
+      <BsArrowUp color="var(--text-2)" size={25} />
     </div>
   );
 };

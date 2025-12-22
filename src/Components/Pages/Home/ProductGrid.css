@@ -53,7 +53,7 @@
   margin: 2rem auto;
   padding: 15px 20px;
   min-width: 150px;
-  background-color: #FFE9F2;
+  background-color: var(--primary);
   color: black;
   border: none;
   cursor: pointer;
@@ -64,22 +64,22 @@
 }
 
 .gallery-button:hover {
-  background-color: #ffd7e8;
+  background-color: var(--second);
 }
 
 /* Responsive for mobile */
 @media (max-width: 992px) {
   .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .gallery-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .gallery-image {
-      height: 550px;
+    height: 550px;
   }
 }

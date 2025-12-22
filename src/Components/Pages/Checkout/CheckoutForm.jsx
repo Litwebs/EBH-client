@@ -5,8 +5,7 @@ import img from "../../../Images/fff.png"; // Default image if needed
 import "./CheckoutForm.css";
 
 function CheckoutForm() {
-  const { Cart, DeleteCart, SetAlert, CreateOrder, GetAddress } =
-    useContext(ClientContext);
+  const { Cart, DeleteCart, SetAlert, CreateOrder } = useContext(ClientContext);
   const getTomorrow = () => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1); // Move to next day
@@ -20,10 +19,8 @@ function CheckoutForm() {
   const [collectionDate, setCollectionDate] = useState("2025-05-06");
   const [missingDate, setMissingDate] = useState(false);
   const [missingFields, setMissingFields] = useState([]);
-  const [county, setCounty] = useState();
-  const [addressLoading, setLoading2] = useState(false);
+  const [addressLoading] = useState(false);
   const [missingDelivery, setMissingDelivery] = useState(false);
-  const [isBD, setISBD] = useState(false);
   const [shippingDetails, setShippingDetails] = useState({
     type: "Collection", // REMOVE THIS IN PRODUCTION
     date: getTomorrow(),
@@ -36,6 +33,7 @@ function CheckoutForm() {
     address: "",
     street: "",
     city: "",
+    county: "",
     postalCode: "",
     phone: "",
   });
@@ -113,7 +111,9 @@ function CheckoutForm() {
     const requiredFields = Object.keys(formFields).filter((field) => {
       if (noDe) {
         // If noDe is true, skip address-related fields
-        return !["address", "postalCode", "street", "city"].includes(field);
+        return !["address", "postalCode", "street", "city", "county"].includes(
+          field
+        );
       }
       return true;
     });
@@ -184,29 +184,8 @@ function CheckoutForm() {
   };
 
   const getAddress = async (number, postalCode) => {
-    if (number === "" && postalCode === "") {
-      setMissingFields(["postalCode", "address"]);
-      return;
-    } else if (number !== "" && postalCode === "") {
-      setMissingFields(["postalCode"]);
-      return;
-    } else if (number === "" && postalCode !== "") {
-      setMissingFields(["address"]);
-      return;
-    }
-    setLoading2(true);
-    const res = await GetAddress(number, postalCode);
-    setLoading2(false);
-    setCounty(res?.county ? res?.county : "");
-    if (res?.pCode) setISBD(isBDPostcode(res?.pCode));
-    setDeliveryMethod("Collection"); // REMOVE THIS IN PRODUCTION
-    setFormFields((prev) => ({
-      ...prev,
-      address: res?.house ? res?.house : "",
-      street: res?.street ? res?.street : "",
-      city: res?.town ? res?.town : "",
-      postalCode: res?.pCode ? res?.pCode : "",
-    }));
+    // Lookup removed: users must manually enter address fields
+    SetAlert("Please enter your full address manually.", "info");
   };
 
   if (Cart.length < 1)
@@ -280,19 +259,6 @@ function CheckoutForm() {
                 }
               />
             </div>
-
-            <button
-              className='look-up'
-              disabled={addressLoading}
-              onClick={() =>
-                getAddress(formFields.address, formFields.postalCode)
-              }>
-              {addressLoading ? <span className='loader-2'></span> : "Look Up"}
-            </button>
-          </>
-        )}
-        {county && (
-          <>
             <div className='city-fields'>
               <input
                 type='text'
@@ -318,9 +284,11 @@ function CheckoutForm() {
                 type='text'
                 name='county'
                 placeholder='County'
-                value={county}
-                onChange={(e) => setCounty(e.target.value)}
-                className={missingFields.includes("city") ? "error-border" : ""}
+                value={formFields.county}
+                onChange={handleInputChange}
+                className={
+                  missingFields.includes("county") ? "error-border" : ""
+                }
               />
             </div>
           </>
@@ -330,47 +298,35 @@ function CheckoutForm() {
             One or more selected products ONLY available for COLLECTION{" "}
           </p>
         )}
-        {county && (
-          <>
-            <h2>Delivery method</h2>
-            <div className={`delivery-methods `}>
-              <div
-                className={`method ${
-                  deliveryMethod === "Collection" ? "selected" : ""
-                }`}
-                onClick={() => handleDeliverySelection("Collection", 0)}>
-                <h4>Collection</h4>
-                <p>9:00 to 19:00</p>
-                <span>Free</span>
-              </div>
-
-              {!noDe && (
-                <div
-                  className={`method disabled ${
-                    deliveryMethod === "Express" ? "selected" : ""
-                  }`}
-                  // onClick={() => handleDeliverySelection("Express", 5.0)}>
-                  onClick={undefined}>
-                  <h4>Delivery</h4>
-                  <p>Delivery Available from</p>
-                  <span>6TH MAY</span>
-                </div>
-              )}
-
-              {/* {!noDe && (
-                <div
-                  className={`method ${
-                    deliveryMethod === "Express" ? "selected" : ""
-                  }`}
-                  onClick={() => handleDeliverySelection("Express", 5.0)}>
-                  <h4>Express</h4>
-                  <p>Next Day Delivery</p>
-                  {isBD ? <span>+ £5.99</span> : <span>+ £9.99</span>}
-                </div>
-              )} */}
+        <>
+          <h2>Delivery method</h2>
+          <div className={`delivery-methods `}>
+            <div
+              className={`method ${
+                deliveryMethod === "Collection" ? "selected" : ""
+              }`}
+              onClick={() => handleDeliverySelection("Collection", 0)}>
+              <h4>Collection</h4>
+              <p>9:00 to 19:00</p>
+              <span>Free</span>
             </div>
-          </>
-        )}
+
+            {!noDe && (
+              <div
+                className={`method disabled ${
+                  deliveryMethod === "Express" ? "selected" : ""
+                }`}
+                // onClick={() => handleDeliverySelection("Express", 5.0)}>
+                onClick={undefined}>
+                <h4>Delivery</h4>
+                <p>Delivery Available from</p>
+                <span>6TH MAY</span>
+              </div>
+            )}
+
+            {/* Future: enable delivery option when available */}
+          </div>
+        </>
         {missingDelivery && (
           <p className='error-text' style={{ marginTop: "1rem" }}>
             Please select an option
@@ -445,37 +401,6 @@ function CheckoutForm() {
   );
 }
 
-const isBDPostcode = (postcode) => {
-  const arr = [
-    "BD1",
-    "BD2",
-    "BD3",
-    "BD4",
-    "BD5",
-    "BD6",
-    "BD7",
-    "BD8",
-    "BD9",
-    "BD12",
-    "BD13",
-    "BD14",
-    "BD15",
-    "BD18",
-  ];
-
-  // Normalize the postcode (uppercase and remove extra spaces)
-
-  // Regular expression to match UK postcode pattern
-  const regex = /^BD(\d{1,2})\s?\d[A-Z]{2}$/;
-
-  const match = postcode?.match(regex);
-
-  if (match) {
-    const area = `BD${match[1]}`; // Extract BD + number part
-    return arr.includes(area);
-  }
-
-  return false;
-};
+// Postcode lookup and BD area detection removed; all fields are manual now.
 
 export default CheckoutForm;

@@ -14,12 +14,11 @@ body {
 }
 :root {
   --text: #544541;
-  --text-2: #5a4a42;
-  --primary: #f5f2eb;
-  --second: #f0e6cc;
-  --tri: #9d8e68;
-  --pink: #af8e98;
-  --pink-light: #f4c2c2;
+  --text-2: #b98d77;
+  --primary: #fff7e7;
+  --pink-light: #fff7e7;
+  --second: rgb(212, 206, 188);
+  --tri: #f7f7f7;
 }
 
 input[type="date"] {

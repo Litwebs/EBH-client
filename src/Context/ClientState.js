@@ -19,8 +19,8 @@ import {
 
 export const ClientContext = createContext();
 
-axios.defaults.baseURL = "https://api.fleure.co.uk";
-// axios.defaults.baseURL = "http://localhost:5001/";
+// axios.defaults.baseURL = "https://api.fleure.co.uk";
+axios.defaults.baseURL = "http://localhost:5001/";
 
 export const ClientState = (props) => {
   const initialState = {
@@ -79,6 +79,7 @@ export const ClientState = (props) => {
       const res = await axios.get(`/api/products/`);
       SetLoading(false);
       dispatch({ type: SET_PRODUCTS, payload: res.data });
+      console.log(res.data);
       return res.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
