@@ -12,11 +12,13 @@ const ContactSection = () => {
           <div>
             <h4>Our Location</h4>
             <p>
-              40 Hollybank Road
+              Fleuré Retail Store
+              <br />
+              559–561 Great Horton Road,
               <br />
               Bradford
               <br />
-              BD7 4QP
+              BD7 4EF
             </p>
           </div>
         </div>
@@ -24,7 +26,7 @@ const ContactSection = () => {
           <FaClock className="contact-icon" />
           <div>
             <h4>Working hours</h4>
-            <p>Mon-Sun 10AM - 9PM</p>
+            <p>Monday – Sunday: 9am – 7pm</p>
           </div>
         </div>
         <div className="contact-info-item">

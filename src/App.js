@@ -15,6 +15,8 @@ import CookieConsent from "./Components/CookieConsent/CookieConsent";
 import Success from "./Components/Pages/Success/Success";
 import Cancelled from "./Components/Pages/Cancelled/Cancelled";
 import Error from "./Components/Pages/Error"; // <- adjust path
+import FleureExperience from "./Components/Pages/FleureExperience/FleureExperience";
+import Menu from "./Components/Pages/Menu/Menu";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -22,7 +24,7 @@ async function checkStatus() {
   try {
     const res = await axios.post(
       "https://admin.litwebs.co.uk/api/websites/status",
-      { url: "https://fleure.co.uk" } // <- change this
+      { url: "https://fleure.co.uk" }, // <- change this
     );
     return res.data?.data?.status === "live";
   } catch (e) {
@@ -68,6 +70,8 @@ const App = () => {
             <Route path="/funeral" element={<Funeral />} />
             <Route path="/hatboxes" element={<HB />} />
             <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<FleureExperience />} />
+            <Route path="/menu" element={<Menu />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancelled />} />

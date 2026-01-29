@@ -1,0 +1,213 @@
+.menu-page {
+  background: #fff;
+  color: #111;
+}
+
+.menu-main {
+  padding-top: 90px; /* fixed header offset */
+}
+
+.menu-hero {
+  padding: 90px 0 56px;
+}
+
+.menu-hero-inner {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.menu-eyebrow {
+  margin: 0 0 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.menu-title {
+  margin: 0 0 10px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.1;
+}
+
+.menu-subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.menu-section {
+  padding: 74px 0;
+  background: #fff;
+}
+
+.menu-section--alt {
+  background: #fafafa;
+}
+
+.menu-section-inner {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.menu-heading {
+  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: clamp(20px, 2.3vw, 28px);
+  letter-spacing: -0.01em;
+}
+
+.menu-note {
+  margin: 0 0 18px;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 80ch;
+}
+
+.menu-table {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.menu-row {
+  display: grid;
+  grid-template-columns: 1fr 110px 110px;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Generic 2-col table (item + price) */
+.menu-table--two-col .menu-row {
+  grid-template-columns: 1fr 160px;
+}
+
+/* 2-col version for sections that only have one price */
+.menu-table[aria-label="Iced drinks"] .menu-row,
+.menu-table[aria-label="Matcha"] .menu-row,
+.menu-table[aria-label="Teas"] .menu-row {
+  grid-template-columns: 1fr 160px;
+}
+
+.menu-row--head {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.menu-row--head .menu-cell {
+  color: rgba(0, 0, 0, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+
+.menu-cell {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.82);
+}
+
+.menu-item {
+  padding-right: 10px;
+}
+
+.menu-price {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.menu-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  padding-top: 26px;
+}
+
+.menu-subhead {
+  margin: 0 0 10px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  padding: 6px 0;
+  color: rgba(0, 0, 0, 0.78);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.menu-callout {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.menu-category {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.menu-category:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.menu-callout-price {
+  margin: 10px 0 0;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.menu-footer-note {
+  padding: 48px 0 90px;
+}
+
+.menu-fineprint {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+@media (max-width: 900px) {
+  .menu-main {
+    padding-top: 75px;
+  }
+
+  .menu-hero {
+    padding: 70px 0 40px;
+  }
+
+  .menu-row {
+    grid-template-columns: 1fr 90px 90px;
+  }
+
+  .menu-table[aria-label="Iced drinks"] .menu-row,
+  .menu-table[aria-label="Matcha"] .menu-row,
+  .menu-table[aria-label="Teas"] .menu-row {
+    grid-template-columns: 1fr 120px;
+  }
+
+  .menu-table--two-col .menu-row {
+    grid-template-columns: 1fr 120px;
+  }
+
+  .menu-two-col {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

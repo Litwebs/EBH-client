@@ -16,7 +16,7 @@ const sectionsData = {
         {
           subtitle: "Can I collect my order?",
           paragraph:
-            "We do offer same day, next day and nominated day collection service from our studio based in Bradford, West Yorkshire. You can select a collection date and time slot at checkout. Orders should be collected at the specific time chosen. Please notify us if the collection time needs to be changed. We offer collection times from 11am until 7pm. Details will be on your confirmation email after checkout.",
+            "Yes — we offer same-day, next-day, and nominated-day collection from our Fleure retail store in Bradford, West Yorkshire. Collections are available daily between 9am and 7pm. Please select your preferred collection date and time slot at checkout. Orders should be collected at the selected time. If you need to change your collection time, please notify us in advance. Full collection details will be included in your confirmation email after checkout. Please select your preferred collection date and time at checkout. Orders should be collected at the chosen time. If you need to make changes, please contact us in advance. Full details will be included in your confirmation email.",
         },
       ],
     },
@@ -126,7 +126,7 @@ const sectionsData = {
         {
           subtitle: "Personal Data",
           paragraph:
-            "This Privacy and Cookies Policy is issued by Fleur\u00e9 UK Ltd., registered in England and Wales, located at 40 Hollybank Road BD7 4QP.",
+            "This Privacy and Cookies Policy is issued by Fleuré UK Ltd., registered in England and Wales, located at 559–561 Great Horton Road, Bradford, BD7 4EF. Fleuré operates as a retail florist and café. Personal data may be collected when customers place floral orders, café orders, table bookings, or contact us via the website or in store.Personal data is used solely for order processing, customer communication, and service improvement, in accordance with UK data protection laws.",
         },
         {
           subtitle: "Data Collection",

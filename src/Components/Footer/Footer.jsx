@@ -12,15 +12,15 @@ import {
 
 const Footer = () => {
   return (
-    <footer className='footer-container'>
-      <div className='footer-content'>
+    <footer className="footer-container">
+      <div className="footer-content">
         {/* Logo Section */}
-        <div className='footer-section footer-logo'>
-          <img src={logo} alt='EventsByHaseeb Logo' />
+        <div className="footer-section footer-logo">
+          <img src={logo} alt="EventsByHaseeb Logo" />
         </div>
 
         {/* Contact Info Section */}
-        <div className='footer-section footer-contact'>
+        <div className="footer-section footer-contact">
           <h4>Contact Us</h4>
           <p>
             <FaPhoneAlt /> 07585 626 475
@@ -29,20 +29,19 @@ const Footer = () => {
             style={{
               cursor: "pointer",
             }}
-            onClick={() =>
-              window.open("mailto:contact@fleure.co.uk", "_blank")
-            }>
+            onClick={() => window.open("mailto:contact@fleure.co.uk", "_blank")}
+          >
             <FaEnvelope /> contact@fleure.co.uk
           </p>
-          <div className='footer-socials'>
+          <div className="footer-socials">
             <FaInstagram
-              className='footer-location-icon'
+              className="footer-location-icon"
               size={30}
-              color='#777'
+              color="#777"
               onClick={() =>
                 window.open(
                   "https://www.instagram.com/fleureuk/?igsh=cjNvbXM2ZGs5cWJ3#",
-                  "_blank"
+                  "_blank",
                 )
               }
             />
@@ -56,30 +55,33 @@ const Footer = () => {
         </div>
 
         {/* Location Section */}
-        <div className='footer-section footer-location'>
+        <div className="footer-section footer-location">
           <FaMapMarkerAlt
-            className='footer-location-icon'
+            className="footer-location-icon"
             size={25}
-            color='#777'
+            color="#777"
           />
           <p>
-            40 Hollybank Road
+            Fleuré Retail Store
+            <br />
+            559–561 Great Horton Road,
             <br />
             Bradford
             <br />
-            BD7 4QP
+            BD7 4EF
           </p>
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className='footer-bottom'>
-        <p>2025 EventsByHaseeb LTD. All rights reserved.</p>
+      <div className="footer-bottom">
+        {/* <p>2025 EventsByHaseeb LTD. All rights reserved.</p> */}
         <a
-          href='https://litwebs.co.uk'
-          target='_blank'
-          rel='noreferrer'
-          className='powered-by'>
+          href="https://litwebs.co.uk"
+          target="_blank"
+          rel="noreferrer"
+          className="powered-by"
+        >
           Powered By Litwebs
         </a>
       </div>
