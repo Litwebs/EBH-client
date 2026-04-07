@@ -3,89 +3,210 @@ import Header from "../../Header/Navbar";
 import Footer from "../../Footer/Footer";
 import "./Menu.css";
 
-const hotDrinks = [
-  { item: "Espresso", r: "2.50", l: "-" },
-  { item: "Flat White", r: "4.20", l: "-" },
-  { item: "Americano", r: "3.50", l: "4.40" },
-  { item: "Latte", r: "4.40", l: "5.00" },
-  { item: "Cappuccino", r: "4.40", l: "5.00" },
-  { item: "Spanish Latte", r: "5.20", l: "5.80" },
-  { item: "Brown Sugar Latte", r: "5.20", l: "5.80" },
-  { item: "Pistachio & White Choc Latte", r: "5.60", l: "6.20" },
-  { item: "Chai Latte", r: "4.90", l: "5.50" },
-  { item: "Caramelised Banana Latte", r: "5.60", l: "6.20" },
-  { item: "Macchiato", r: "3.80", l: "4.40" },
-  { item: "Cortado", r: "3.50", l: "-" },
-  { item: "Mocha", r: "4.80", l: "5.20" },
-  { item: "Karak", r: "3.20", l: "4.00" },
-  { item: "Luxury Hot Chocolate", r: "4.75", l: "5.50" },
+const coffeeItems = [
+  { item: "espresso", regular: "3.5" },
+  { item: "cortado", regular: "3.9" },
+  { item: "flat white", regular: "3.9" },
+  { item: "americano", regular: "3.5", large: "4.1" },
+  { item: "mocha", regular: "4.2", large: "4.8" },
+  { item: "macchiato", regular: "4.4", large: "5.0" },
+  { item: "latte", regular: "3.9", large: "4.5" },
+  { item: "cappuchino", regular: "3.9", large: "4.5" },
 ];
 
-const matchaFlavours = [
-  { item: "White Choc", price: "5.50" },
-  { item: "Strawberry", price: "5.50" },
-  { item: "Vanilla", price: "5.50" },
-  { item: "Mango", price: "5.50" },
-  { item: "Blueberry", price: "5.50" },
-  { item: "Strawberry & White Choc", price: "5.75" },
-  { item: "Blueberry & White Choc", price: "5.75" },
-  { item: "Banana Bread", price: "5.75" },
+const latteItems = [
+  { item: "chai latte", regular: "4.5", large: "5.1" },
+  { item: "dirty chai latte", regular: "4.6", large: "5.2" },
+  { item: "spanish latte", regular: "5.2", large: "5.8" },
+  { item: "brown sugar latte", regular: "5.6", large: "6.2" },
+  { item: "pistachio latte", regular: "5.6", large: "6.2" },
+  { item: "caramelised banana latte", regular: "5.6", large: "6.2" },
+];
+
+const hotChocolateItems = [
+  { item: "belgian hot chocolate", regular: "3.9", large: "4.5" },
+  { item: "white chocolate", regular: "3.9", large: "4.5" },
+  { item: "terry's orange", regular: "4.8", large: "5.5" },
+  { item: "kinder bueno", regular: "4.8", large: "5.5" },
+  { item: "bounty", regular: "4.8", large: "5.5" },
 ];
 
 const icedDrinks = [
-  { item: "Iced Coffee", price: "2.90" },
-  { item: "Iced Spanish Latte", price: "5.90" },
-  { item: "Iced Brown Sugar Latte", price: "5.90" },
-  { item: "Iced Chai Latte", price: "5.70" },
-  { item: "Iced Pistachio & White Choc Latte", price: "6.30" },
-  { item: "Iced Caramelised Banana Shake", price: "6.30" },
+  { item: "iced coffee", price: "4.9" },
+  { item: "iced mocha", price: "5.3" },
+  { item: "iced frappuccino", price: "5.7" },
+  { item: "iced chai latte", price: "5.9" },
+  { item: "iced spanish latte", price: "5.9" },
+  { item: "iced brown sugar latte", price: "6.2" },
+  { item: "iced pistachio latte", price: "6.2" },
+  { item: "iced caramelised banana latte", price: "6.3" },
+  { item: "iced tiramisu latte", price: "6.3" },
 ];
 
 const teas = [
-  { item: "English", price: "4.00" },
-  { item: "Green Mint", price: "4.00" },
+  { item: "english tea", regular: "3.2", large: "3.8" },
+  { item: "green tea", regular: "3.2", large: "3.8" },
+  { item: "mint tea", regular: "3.2", large: "3.8" },
+  { item: "karak tea", regular: "3.2", large: "3.8" },
 ];
 
-const bakedWithLove = [
+const matchaClassic = [
+  { item: "white chocolate", price: "5.5" },
+  { item: "strawberry", price: "5.5" },
+  { item: "vanilla", price: "5.5" },
+  { item: "blueberry", price: "5.5" },
+  { item: "mango", price: "5.5" },
+];
+
+const matchaSpecial = [
+  { item: "strawberry & white chocolate", price: "5.8" },
+  { item: "blueberry & white chocolate", price: "5.8" },
+  { item: "banana bread", price: "5.8" },
+];
+
+const extraItems = [
+  { item: "syrups", price: "0.3" },
+  { item: "whipped cream", price: "0.5" },
+  { item: "cold foam", price: "0.6" },
+  { item: "bottled water", price: "2.0" },
+];
+
+const milkOptions = ["whole", "skimmed", "oat, almond", "no extra charge"];
+
+const syrupOptions = [
+  "caramel hazelnut",
+  "vanilla, salted caramel",
+  "white chocolate",
+  "+0.3",
+];
+
+const matchaPowders = [
+  "organic, red velvet",
+  "vanilla & honey",
+  "no extra charge",
+];
+
+const bottomSections = [
   {
-    category: "Muffins",
+    title: "cookies",
     items: [
-      { item: "Blueberry", price: "4.50" },
-      { item: "Strawberry", price: "4.50" },
-      { item: "Chocolate and Vanilla", price: "4.25" },
+      { item: "chocolate chip", price: "3.5" },
+      { item: "matcha, raspberry & coconut gf", price: "3.8" },
+      { item: "pistachio & white chocolate", price: "3.8" },
+      { item: "strawberry & cream", price: "3.8" },
     ],
   },
   {
-    category: "Cookies",
+    title: "muffins",
     items: [
-      { item: "Chocolate Chip", price: "2.95" },
-      { item: "Matcha, Raspberry and Coconut", price: "3.75" },
-      { item: "Pistachio and White Chocolate", price: "3.75" },
-      { item: "Strawberry and Cream", price: "3.75" },
+      { item: "blueberry", price: "4.5" },
+      { item: "strawberry", price: "4.5" },
+      { item: "chocolate & vanilla", price: "4.5" },
+      { item: "triple chocolate", price: "4.5" },
     ],
   },
   {
-    category: "Loaf Cake Slices",
+    title: "loaf cake",
     items: [
-      { item: "Carrot Cake", price: "4.50" },
-      { item: "Matcha, Almond and Raspberry", price: "5.25" },
-      { item: "Banana Bread", price: "4.25" },
+      { item: "lemon drizzle", price: "5.3" },
+      { item: "banana bread gf ve", price: "4.5" },
+      { item: "carrot cake", price: "4.5" },
+      { item: "matcha, almond & raspberry gf", price: "5.3" },
     ],
   },
   {
-    category: "Croissant",
+    title: "traybakes",
     items: [
-      { item: "Butter Croissant", price: "3.75" },
-      { item: "Almond Croissant", price: "4.50" },
-      { item: "Pain Au Chocolate", price: "4.25" },
-      { item: "Cinnamon Bun", price: "3.99" },
+      { item: "classic brownie", price: "4.0" },
+      { item: "millionaire shortbread", price: "4.0" },
+      { item: "salted caramel brownie", price: "4.5" },
+      { item: "raspberry & white chocolate blondie", price: "4.5" },
     ],
   },
   {
-    category: "Trompe L'oeil",
-    items: [{ item: "Trompe L'oeil", price: "9.99" }],
+    title: "pastries",
+    items: [
+      { item: "pain au chocolat", price: "3.0" },
+      { item: "butter croissant", price: "3.8" },
+      { item: "cinnamon bun", price: "4.0" },
+      { item: "chocolate croissant", price: "4.3" },
+      { item: "almond croissant", price: "4.3" },
+      { item: "banoffee pie", price: "4.5" },
+    ],
+  },
+  {
+    title: "trompe-l'oeil",
+    items: [
+      { item: "illusion dessert inspired by real fruits", price: "10.0" },
+    ],
   },
 ];
+
+const TriplePriceSection = ({ title, items }) => (
+  <section className="menu-block">
+    <h2 className="menu-block-title">{title}</h2>
+    <div className="menu-price-grid" role="table" aria-label={title}>
+      <div className="menu-price-row menu-price-row--head" role="row">
+        <div
+          className="menu-price-cell menu-price-cell--item"
+          role="columnheader"
+        />
+        <div className="menu-price-cell" role="columnheader">
+          regular
+        </div>
+        <div className="menu-price-cell" role="columnheader">
+          large
+        </div>
+      </div>
+
+      {items.map((entry) => (
+        <div className="menu-price-row" role="row" key={entry.item}>
+          <div className="menu-price-cell menu-price-cell--item" role="cell">
+            {entry.item}
+          </div>
+          <div className="menu-price-cell" role="cell">
+            {entry.regular || ""}
+          </div>
+          <div className="menu-price-cell" role="cell">
+            {entry.large || ""}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+const SinglePriceSection = ({ title, items, note }) => (
+  <section className="menu-block menu-block--single">
+    <div className="menu-block-head">
+      <h2 className="menu-block-title">{title}</h2>
+      {note ? <span>{note}</span> : null}
+    </div>
+    <div className="menu-single-list" role="table" aria-label={title}>
+      {items.map((entry) => (
+        <div className="menu-single-row" role="row" key={entry.item}>
+          <div className="menu-single-item" role="cell">
+            {entry.item}
+          </div>
+          <div className="menu-single-price" role="cell">
+            {entry.price}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+const OptionList = ({ title, items }) => (
+  <section className="menu-extra-group">
+    <h3>{title}</h3>
+    <ul>
+      {items.map((entry) => (
+        <li key={entry}>{entry}</li>
+      ))}
+    </ul>
+  </section>
+);
 
 const Menu = () => {
   return (
@@ -93,197 +214,137 @@ const Menu = () => {
       <Header />
 
       <main className="menu-main">
-        <header className="menu-hero">
-          <div className="menu-hero-inner">
-            <p className="menu-eyebrow">Fleure Café</p>
-            <h1 className="menu-title">Menu</h1>
-            <p className="menu-subtitle">A simple, curated selection.</p>
-          </div>
-        </header>
+        <div className="menu-page-heading">
+          <h1>menu</h1>
+        </div>
 
-        <section className="menu-section">
-          <div className="menu-section-inner">
-            <h2 className="menu-heading">Hot Drinks</h2>
-            <div className="menu-table" role="table" aria-label="Hot drinks">
-              <div className="menu-row menu-row--head" role="row">
-                <div className="menu-cell menu-item" role="columnheader">
-                  Drink
-                </div>
-                <div className="menu-cell menu-price" role="columnheader">
-                  R
-                </div>
-                <div className="menu-cell menu-price" role="columnheader">
-                  L
-                </div>
+        <section className="menu-sheet-wrap">
+          <article className="menu-sheet">
+            <div className="menu-top-grid">
+              <div className="menu-column">
+                <TriplePriceSection title="coffee" items={coffeeItems} />
+                <TriplePriceSection
+                  title="hot chocolate"
+                  items={hotChocolateItems}
+                />
+                <TriplePriceSection title="teas" items={teas} />
               </div>
 
-              {hotDrinks.map((row) => (
-                <div className="menu-row" role="row" key={row.item}>
-                  <div className="menu-cell menu-item" role="cell">
-                    {row.item}
+              <div className="menu-column">
+                <TriplePriceSection title="latte" items={latteItems} />
+                <SinglePriceSection
+                  title="iced drinks"
+                  items={icedDrinks}
+                  note="12oz"
+                />
+
+                <section className="menu-block menu-block--matcha">
+                  <div className="menu-block-head">
+                    <h2 className="menu-block-title">matcha</h2>
+                    <span>12oz</span>
                   </div>
-                  <div className="menu-cell menu-price" role="cell">
-                    {row.r !== "-" ? `£${row.r}` : "-"}
-                  </div>
-                  <div className="menu-cell menu-price" role="cell">
-                    {row.l !== "-" ? `£${row.l}` : "-"}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        <section className="menu-section menu-section--alt">
-          <div className="menu-section-inner">
-            <h2 className="menu-heading">Matcha (Hot/Iced)</h2>
-            <p className="menu-note">
-              Powder options: organic, red velvet, vanilla and honey
-            </p>
+                  <div className="menu-matcha-grid">
+                    <div
+                      className="menu-single-list"
+                      role="table"
+                      aria-label="matcha classic"
+                    >
+                      {matchaClassic.map((entry) => (
+                        <div
+                          className="menu-single-row"
+                          role="row"
+                          key={entry.item}
+                        >
+                          <div className="menu-single-item" role="cell">
+                            {entry.item}
+                          </div>
+                          <div className="menu-single-price" role="cell">
+                            {entry.price}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
 
-            <div className="menu-table" role="table" aria-label="Matcha">
-              <div className="menu-row menu-row--head" role="row">
-                <div className="menu-cell menu-item" role="columnheader">
-                  Flavour
-                </div>
-                <div className="menu-cell menu-price" role="columnheader">
-                  Price
-                </div>
-              </div>
-
-              {matchaFlavours.map((row) => (
-                <div className="menu-row" role="row" key={row.item}>
-                  <div className="menu-cell menu-item" role="cell">
-                    {row.item}
-                  </div>
-                  <div className="menu-cell menu-price" role="cell">
-                    £{row.price}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="menu-section">
-          <div className="menu-section-inner">
-            <h2 className="menu-heading">Iced Drinks</h2>
-
-            <div className="menu-table" role="table" aria-label="Iced drinks">
-              <div className="menu-row menu-row--head" role="row">
-                <div className="menu-cell menu-item" role="columnheader">
-                  Drink
-                </div>
-                <div className="menu-cell menu-price" role="columnheader">
-                  Price
-                </div>
-              </div>
-
-              {icedDrinks.map((row) => (
-                <div className="menu-row" role="row" key={row.item}>
-                  <div className="menu-cell menu-item" role="cell">
-                    {row.item}
-                  </div>
-                  <div className="menu-cell menu-price" role="cell">
-                    £{row.price}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="menu-two-col">
-              <div>
-                <h3 className="menu-subhead">Milk options (no extra charge)</h3>
-                <ul className="menu-list">
-                  <li>Whole</li>
-                  <li>Skimmed</li>
-                  <li>Oat</li>
-                  <li>Almond</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="menu-subhead">Syrups (no extra charge)</h3>
-                <ul className="menu-list">
-                  <li>Caramel</li>
-                  <li>Hazelnut</li>
-                  <li>Vanilla</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="menu-section">
-          <div className="menu-section-inner">
-            <h2 className="menu-heading">Baked with love</h2>
-
-            {bakedWithLove.map((group) => (
-              <div className="menu-category" key={group.category}>
-                <h3 className="menu-subhead">{group.category}</h3>
-
-                <div
-                  className="menu-table menu-table--two-col"
-                  role="table"
-                  aria-label={`${group.category} items`}
-                >
-                  {group.items.map((row) => (
-                    <div className="menu-row" role="row" key={row.item}>
-                      <div className="menu-cell menu-item" role="cell">
-                        {row.item}
-                      </div>
-                      <div className="menu-cell menu-price" role="cell">
-                        £{row.price}
+                    <div>
+                      <div className="menu-matcha-meta">12oz</div>
+                      <div
+                        className="menu-single-list"
+                        role="table"
+                        aria-label="matcha special"
+                      >
+                        {matchaSpecial.map((entry) => (
+                          <div
+                            className="menu-single-row"
+                            role="row"
+                            key={entry.item}
+                          >
+                            <div className="menu-single-item" role="cell">
+                              {entry.item}
+                            </div>
+                            <div className="menu-single-price" role="cell">
+                              {entry.price}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="menu-section menu-section--alt">
-          <div className="menu-section-inner">
-            <h2 className="menu-heading">Teas</h2>
-
-            <div className="menu-table" role="table" aria-label="Teas">
-              <div className="menu-row menu-row--head" role="row">
-                <div className="menu-cell menu-item" role="columnheader">
-                  Tea
-                </div>
-                <div className="menu-cell menu-price" role="columnheader">
-                  Price
-                </div>
-              </div>
-
-              {teas.map((row) => (
-                <div className="menu-row" role="row" key={row.item}>
-                  <div className="menu-cell menu-item" role="cell">
-                    {row.item}
                   </div>
-                  <div className="menu-cell menu-price" role="cell">
-                    £{row.price}
-                  </div>
-                </div>
-              ))}
+                </section>
+              </div>
             </div>
 
-            <div className="menu-callout">
-              <h3 className="menu-subhead">Parisian Style Hot Chocolate</h3>
-              <p className="menu-note">
-                Served with a bowl of whipped cream and strawberries
+            <section className="menu-extras">
+              <SinglePriceSection title="extras" items={extraItems} />
+              <OptionList title="milk options" items={milkOptions} />
+              <OptionList title="syrups" items={syrupOptions} />
+              <OptionList title="matcha powder" items={matchaPowders} />
+            </section>
+
+            <section className="menu-callout-card">
+              <div className="menu-callout-title">
+                <span>le chocolat de FLEURÉ</span>
+                <strong>15.00</strong>
+              </div>
+              <p>
+                A rich, spoon-thick Parisian hot chocolate inspired by historic
+                cafes of Paris, served with fresh strawberries and a bowl of
+                lightly whipped cream. Designed to share for two.
               </p>
-              <p className="menu-callout-price">£15.00</p>
-            </div>
-          </div>
-        </section>
+            </section>
 
-        <section className="menu-footer-note">
-          <div className="menu-section-inner">
-            <p className="menu-fineprint">
-              Prices are shown in GBP (£). Availability may vary.
-            </p>
-          </div>
+            <section className="menu-bottom-grid">
+              {bottomSections.map((section) => (
+                <section className="menu-bottom-block" key={section.title}>
+                  <h2 className="menu-block-title">{section.title}</h2>
+                  <div
+                    className="menu-single-list"
+                    role="table"
+                    aria-label={section.title}
+                  >
+                    {section.items.map((entry) => (
+                      <div
+                        className="menu-single-row"
+                        role="row"
+                        key={entry.item}
+                      >
+                        <div className="menu-single-item" role="cell">
+                          {entry.item}
+                        </div>
+                        <div className="menu-single-price" role="cell">
+                          {entry.price}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </section>
+
+            <footer className="menu-sheet-footer">
+              <div className="menu-brand">FLEURÉ</div>
+            </footer>
+          </article>
         </section>
       </main>
 

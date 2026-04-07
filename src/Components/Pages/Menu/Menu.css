@@ -1,213 +1,315 @@
 .menu-page {
-  background: #fff;
-  color: #111;
+  background:
+    radial-gradient(circle at top, rgba(210, 193, 168, 0.28), transparent 30%),
+    linear-gradient(180deg, #f1ece3 0%, #e8e0d4 100%);
+  color: #25201c;
 }
 
 .menu-main {
-  padding-top: 90px; /* fixed header offset */
+  padding: 118px 20px 72px;
 }
 
-.menu-hero {
-  padding: 90px 0 56px;
+.menu-page-heading {
+  max-width: 1240px;
+  margin: 24px auto 0;
+  text-align: center;
 }
 
-.menu-hero-inner {
-  width: min(980px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-.menu-eyebrow {
-  margin: 0 0 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.menu-title {
-  margin: 0 0 10px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  font-size: clamp(34px, 4vw, 56px);
-  line-height: 1.1;
-}
-
-.menu-subtitle {
+.menu-page-heading h1 {
   margin: 0;
-  font-size: 16px;
-  line-height: 2;
-  color: rgba(0, 0, 0, 0.75);
-}
-
-.menu-section {
-  padding: 74px 0;
-  background: #fff;
-}
-
-.menu-section--alt {
-  background: #fafafa;
-}
-
-.menu-section-inner {
-  width: min(980px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-.menu-heading {
-  margin: 0 0 24px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 400;
-  font-size: clamp(20px, 2.3vw, 28px);
-  letter-spacing: -0.01em;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
 }
 
-.menu-note {
-  margin: 0 0 18px;
-  color: rgba(0, 0, 0, 0.72);
-  font-size: 14px;
-  line-height: 1.9;
-  max-width: 80ch;
+.menu-sheet-wrap {
+  max-width: 1240px;
+  margin: 28px auto 0;
 }
 
-.menu-table {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+.menu-sheet {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, 920px);
+  padding: 3.75rem 3rem 2.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 237, 0.96)),
+    radial-gradient(circle at 20% 20%, rgba(212, 203, 190, 0.32), transparent 36%),
+    radial-gradient(circle at 80% 65%, rgba(226, 217, 202, 0.24), transparent 34%);
+  border-radius: 24px;
+  box-shadow: 0 22px 60px rgba(63, 47, 30, 0.16);
+  overflow: hidden;
 }
 
-.menu-row {
+.menu-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 35%, rgba(120, 101, 76, 0.05) 0, transparent 18%),
+    radial-gradient(circle at 82% 74%, rgba(120, 101, 76, 0.05) 0, transparent 16%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45) 0, transparent 42%);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.menu-top-grid,
+.menu-bottom-grid,
+.menu-extras,
+.menu-sheet-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-top-grid {
   display: grid;
-  grid-template-columns: 1fr 110px 110px;
-  gap: 12px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
 }
 
-/* Generic 2-col table (item + price) */
-.menu-table--two-col .menu-row {
-  grid-template-columns: 1fr 160px;
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.55rem;
 }
 
-/* 2-col version for sections that only have one price */
-.menu-table[aria-label="Iced drinks"] .menu-row,
-.menu-table[aria-label="Matcha"] .menu-row,
-.menu-table[aria-label="Teas"] .menu-row {
-  grid-template-columns: 1fr 160px;
+.menu-block-title {
+  margin: 0 0 0.35rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.9rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
 }
 
-.menu-row--head {
-  padding-top: 16px;
-  padding-bottom: 16px;
+.menu-block-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
 }
 
-.menu-row--head .menu-cell {
-  color: rgba(0, 0, 0, 0.55);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 11px;
+.menu-block-head span,
+.menu-matcha-meta {
+  font-size: 0.8rem;
+  color: rgba(37, 32, 28, 0.72);
 }
 
-.menu-cell {
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(0, 0, 0, 0.82);
+.menu-price-row,
+.menu-single-row {
+  display: grid;
+  align-items: baseline;
+  gap: 0.65rem;
 }
 
-.menu-item {
-  padding-right: 10px;
+.menu-price-row {
+  grid-template-columns: minmax(0, 1fr) 52px 52px;
 }
 
-.menu-price {
-  text-align: right;
+.menu-price-row--head {
+  margin-bottom: 0.15rem;
+}
+
+.menu-price-row--head .menu-price-cell {
+  font-size: 0.7rem;
+  color: rgba(37, 32, 28, 0.7);
+}
+
+.menu-price-cell,
+.menu-single-item,
+.menu-single-price,
+.menu-extra-group li {
+  font-size: 0.93rem;
+  line-height: 1.2;
+}
+
+.menu-price-cell,
+.menu-single-price {
   font-variant-numeric: tabular-nums;
 }
 
-.menu-two-col {
+.menu-price-cell--item,
+.menu-single-item {
+  text-transform: lowercase;
+}
+
+.menu-price-cell:not(.menu-price-cell--item),
+.menu-single-price {
+  text-align: right;
+}
+
+.menu-single-row {
+  grid-template-columns: minmax(0, 1fr) 52px;
+}
+
+.menu-matcha-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 34px;
-  padding-top: 26px;
+  gap: 1rem;
 }
 
-.menu-subhead {
-  margin: 0 0 10px;
+.menu-extras {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.7rem;
+}
+
+.menu-extra-group h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
   font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.62);
+  line-height: 1;
+  text-transform: lowercase;
 }
 
-.menu-list {
-  list-style: none;
+.menu-extra-group ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-.menu-list li {
-  padding: 6px 0;
-  color: rgba(0, 0, 0, 0.78);
-  font-size: 15px;
-  line-height: 1.8;
+.menu-extra-group li {
+  color: rgba(37, 32, 28, 0.9);
 }
 
-.menu-callout {
-  margin-top: 34px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+.menu-callout-card {
+  position: relative;
+  z-index: 1;
+  margin: 1.95rem auto 2rem;
+  padding: 1rem 1.3rem;
+  border: 1px solid rgba(175, 135, 76, 0.72);
+  border-radius: 16px;
+  text-align: center;
 }
 
-.menu-category {
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+.menu-callout-title {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.35rem;
+  font-family: "Playfair Display", serif;
 }
 
-.menu-category:first-of-type {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
+.menu-callout-title span {
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
 }
 
-.menu-callout-price {
-  margin: 10px 0 0;
-  font-size: 18px;
-  letter-spacing: 0.02em;
+.menu-callout-title strong {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.menu-footer-note {
-  padding: 48px 0 90px;
+.menu-callout-card p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
-.menu-fineprint {
-  margin: 0;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 13px;
-  line-height: 1.9;
+.menu-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.7rem 1.9rem;
+}
+
+.menu-bottom-block .menu-block-title {
+  margin-bottom: 0.45rem;
+}
+
+.menu-sheet-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: 2.6rem;
+}
+
+.menu-brand {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.24em;
 }
 
 @media (max-width: 900px) {
   .menu-main {
-    padding-top: 75px;
+    padding-top: 102px;
   }
 
-  .menu-hero {
-    padding: 70px 0 40px;
+  .menu-sheet-wrap {
+    margin-top: 20px;
   }
 
-  .menu-row {
-    grid-template-columns: 1fr 90px 90px;
+  .menu-sheet {
+    padding: 2.5rem 1.5rem 2rem;
   }
 
-  .menu-table[aria-label="Iced drinks"] .menu-row,
-  .menu-table[aria-label="Matcha"] .menu-row,
-  .menu-table[aria-label="Teas"] .menu-row {
-    grid-template-columns: 1fr 120px;
-  }
-
-  .menu-table--two-col .menu-row {
-    grid-template-columns: 1fr 120px;
-  }
-
-  .menu-two-col {
+  .menu-top-grid,
+  .menu-bottom-grid,
+  .menu-extras,
+  .menu-matcha-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+  }
+
+  .menu-callout-title {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .menu-main {
+    padding: 92px 12px 56px;
+  }
+
+  .menu-page-heading h1 {
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+  }
+
+  .menu-page-heading h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .menu-sheet-wrap {
+    margin-top: 16px;
+  }
+
+  .menu-sheet {
+    padding: 1.5rem 1rem;
+    border-radius: 18px;
+  }
+
+  .menu-top-grid,
+  .menu-column,
+  .menu-bottom-grid {
+    gap: 1.2rem;
+  }
+
+  .menu-price-row {
+    grid-template-columns: minmax(0, 1fr) 44px 44px;
+  }
+
+  .menu-single-row {
+    grid-template-columns: minmax(0, 1fr) 44px;
+  }
+
+  .menu-price-cell,
+  .menu-single-item,
+  .menu-single-price,
+  .menu-extra-group li {
+    font-size: 0.82rem;
+  }
+
+  .menu-brand {
+    letter-spacing: 0.16em;
   }
 }

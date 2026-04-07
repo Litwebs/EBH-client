@@ -1,15 +1,18 @@
-import React from "react";
 import Header from "../../Header/Navbar";
 import Footer from "../../Footer/Footer";
 import "./FleureExperience.css";
 
-import hero from "../../../Images/hero2.jpg";
+import hero from "../../../Images/Home-new.jpeg";
 
 // Lifestyle imagery (existing assets)
-import lifestyle1 from "../../../Images/new/pic4.jpg";
-import lifestyle2 from "../../../Images/new/pic9.jpg";
-import lifestyle3 from "../../../Images/new/pic12.jpg";
-import lifestyle4 from "../../../Images/new/pic16.jpg";
+import lifestyle1 from "../../../Images/FX-2.jpeg";
+import lifestyle2 from "../../../Images/FX-3.jpeg";
+import lifestyle3 from "../../../Images/FX-4.jpeg";
+import lifestyle4 from "../../../Images/FX-1.jpeg";
+import lifestyle5 from "../../../Images/FX-5.jpeg";
+import lifestyle6 from "../../../Images/FX-6.jpeg";
+import lifestyle7 from "../../../Images/FX-7.jpeg";
+import lifestyle8 from "../../../Images/FX-8.jpeg";
 
 const FleureExperience = () => {
   return (
@@ -76,7 +79,7 @@ const FleureExperience = () => {
         <section className="fe-gallery" aria-label="Fleure lifestyle gallery">
           <div className="fe-gallery-inner">
             <div className="fe-gallery-grid">
-              <figure className="fe-tile fe-tile--wide">
+              <figure className="fe-tile">
                 <img src={lifestyle1} alt="Fleure atmosphere" loading="lazy" />
               </figure>
               <figure className="fe-tile">
@@ -92,14 +95,42 @@ const FleureExperience = () => {
                   loading="lazy"
                 />
               </figure>
+              <figure className="fe-tile">
+                <img
+                  src={lifestyle5}
+                  alt="Portrait detail at Fleure"
+                  loading="lazy"
+                />
+              </figure>
+              <figure className="fe-tile">
+                <img
+                  src={lifestyle6}
+                  alt="Fleure interior portrait"
+                  loading="lazy"
+                />
+              </figure>
+              <figure className="fe-tile">
+                <img
+                  src={lifestyle7}
+                  alt="Fleure floral portrait"
+                  loading="lazy"
+                />
+              </figure>
+              <figure className="fe-tile">
+                <img
+                  src={lifestyle8}
+                  alt="Fleure floral portrait"
+                  loading="lazy"
+                />
+              </figure>
             </div>
 
-            <div className="fe-gallery-caption">
+            {/* <div className="fe-gallery-caption">
               <p>
                 Quiet light. Thoughtful design. A space that invites you to slow
                 down.
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
 

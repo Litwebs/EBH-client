@@ -5,7 +5,6 @@ import {
   FaEnvelope,
   FaInstagram,
   FaTiktok,
-  FaSnapchatGhost,
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
@@ -45,12 +44,14 @@ const Footer = () => {
                 )
               }
             />
-            {/* <FaTiktok className="footer-location-icon" size={30} color="#777" />
-            <FaSnapchatGhost
+            <FaTiktok
               className="footer-location-icon"
               size={30}
               color="#777"
-            /> */}
+              onClick={() =>
+                window.open("https://www.tiktok.com/@fleureuk", "_blank")
+              }
+            />
           </div>
         </div>
 
