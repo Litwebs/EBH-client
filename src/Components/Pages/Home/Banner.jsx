@@ -11,8 +11,9 @@ const Banner = () => {
       }}
     >
       <div className="banner-overlay-2">
-        <div className="banner-frame">
+        <div className="banner-content">
           <h1 className="banner-text-2">FLEURÉ</h1>
+          <p className="banner-tagline">where blooms meet brews</p>
         </div>
       </div>
     </div>
