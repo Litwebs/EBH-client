@@ -1,8 +1,8 @@
 import React from "react";
 import "./ProductGrid.css";
-import balloonsImage from "../../../Images/new/pic10.jpg";
-import bouquetsImage from "../../../Images/new/pic3.jpg";
-import giftSetsImage from "../../../Images/new/pic4.jpg";
+import balloonsImage from "../../../Images/category-baloon.jpeg";
+import bouquetsImage from "../../../Images/category-hat.jpeg";
+import giftSetsImage from "../../../Images/category-boq.jpeg";
 import { useNavigate } from "react-router-dom";
 
 const products = [

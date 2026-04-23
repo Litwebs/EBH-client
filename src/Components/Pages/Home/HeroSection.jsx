@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import bouquetImage from "../../../Images/new/pic1.jpg";
+import bouquetImage from "../../../Images/hero.jpeg";
 
 const HeroSection = () => {
   return (

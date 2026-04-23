@@ -10,7 +10,7 @@
 
 .my-story-content {
     flex: 1;
-    font-family: 'Public Sans', sans-serif;
+    font-family: inherit;
 }
 
 .my-story-title {

@@ -27,7 +27,7 @@
   }
   
   .section-paragraph {
-    font-family: 'Public Sans', sans-serif;
+    font-family: inherit;
     color: #666;
     font-size:14px;
     line-height: 1.5;

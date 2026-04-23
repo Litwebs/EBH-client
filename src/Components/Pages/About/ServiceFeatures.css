@@ -35,7 +35,7 @@
 }
 
 .feature-description {
-    font-family: 'Public Sans', sans-serif;
+    font-family: inherit;
     font-size: 0.95rem;
     color: #5a4a42;
     font-weight: 200;
