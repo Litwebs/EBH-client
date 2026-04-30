@@ -24,7 +24,7 @@ async function checkStatus() {
   try {
     const res = await axios.post(
       "https://admin.litwebs.co.uk/api/websites/status",
-      { url: "https://fleure.co.uk" }, // <- change this
+      { url: "https://fleure.co.uk" },
     );
     return res.data?.data?.status === "live";
   } catch (e) {
@@ -77,7 +77,7 @@ const App = () => {
             <Route path="/cancel" element={<Cancelled />} />
           </Routes>
 
-          <CookieConsent />
+          {/* <CookieConsent /> */}
           <Cart />
           <Alert />
         </>
