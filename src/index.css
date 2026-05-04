@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
@@ -24,6 +28,12 @@ textarea {
   --pink-light: #fff7e7;
   --second: rgb(212, 206, 188);
   --tri: #f7f7f7;
+
+  /* Tailwind theme tokens */
+  --background: 0 0% 100%;
+  --foreground: 215 50% 23%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 47%;
 }
 
 input[type="date"] {
