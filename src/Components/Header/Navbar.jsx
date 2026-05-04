@@ -41,48 +41,71 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <nav className={`nav`}>
-        <Link to="/balloons" onClick={() => setMenuOpen(false)}>
-          Balloons
+      <div className="eid-announce-wrap">
+        <Link
+          to="/eid-collection"
+          className="eid-nav-pill"
+          onClick={() => setMenuOpen(false)}
+        >
+          <span className="eid-nav-pill__kicker">New Release</span>
+          <span className="eid-nav-pill__divider">|</span>
+          Eid Collection
         </Link>
-        <Link to="/bouquets " onClick={() => setMenuOpen(false)}>
-          Bouquets
-        </Link>
-        <Link to="/bloomandboxes" onClick={() => setMenuOpen(false)}>
-          Bloom & Bubbles
-        </Link>
-        <Link to="/menu" onClick={() => setMenuOpen(false)}>
-          Menu
-        </Link>
-      </nav>
-      <img
-        alt=""
-        src={scrolled ? smallLogo : fullLogo}
-        onClick={() => nav("/")}
-        className={`logo ${!scrolled ? "" : ""}`}
-      />
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        <RxHamburgerMenu color="#333" size={30} />
-      </button>
-      <nav className={`nav`}>
-        <Link to="/experience" onClick={() => setMenuOpen(false)}>
-          The Fleure Experience
-        </Link>
-        <Link to="/hatboxes" onClick={() => setMenuOpen(false)}>
-          Hat Boxes
-        </Link>
+      </div>
 
-        <Link to="/funeral" onClick={() => setMenuOpen(false)}>
-          Funeral Flowers
-        </Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>
-          About
-        </Link>
-      </nav>
+      <div className="header-main">
+        <nav className={`nav`}>
+          <Link to="/balloons" onClick={() => setMenuOpen(false)}>
+            Balloons
+          </Link>
+          <Link to="/bouquets " onClick={() => setMenuOpen(false)}>
+            Bouquets
+          </Link>
+          <Link to="/bloomandboxes" onClick={() => setMenuOpen(false)}>
+            Bloom & Bubbles
+          </Link>
+          <Link to="/menu" onClick={() => setMenuOpen(false)}>
+            Menu
+          </Link>
+        </nav>
+
+        <img
+          alt=""
+          src={scrolled ? smallLogo : fullLogo}
+          onClick={() => nav("/")}
+          className={`logo ${!scrolled ? "" : ""}`}
+        />
+
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <RxHamburgerMenu color="#333" size={30} />
+        </button>
+
+        <nav className={`nav`}>
+          <Link to="/experience" onClick={() => setMenuOpen(false)}>
+            The Fleure Experience
+          </Link>
+          <Link to="/hatboxes" onClick={() => setMenuOpen(false)}>
+            Hat Boxes
+          </Link>
+          <Link to="/funeral" onClick={() => setMenuOpen(false)}>
+            Funeral Flowers
+          </Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>
+            About
+          </Link>
+        </nav>
+      </div>
 
       <nav className={`nav ${menuOpen ? "open" : "dis-none"} `}>
         <Link to="/" onClick={() => setMenuOpen(false)}>
           Home
+        </Link>
+        <Link
+          to="/eid-collection"
+          className="eid-nav-pill eid-nav-pill--mobile"
+          onClick={() => setMenuOpen(false)}
+        >
+          Eid Collection
         </Link>
         <Link to="/menu" onClick={() => setMenuOpen(false)}>
           Menu

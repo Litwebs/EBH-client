@@ -1,0 +1,52 @@
+.eid-banner-container {
+    width: 100%;
+    padding: 60px 5%;
+    text-align: center;
+    background-color: white;
+    margin-top: 160px;
+}
+
+.eid-banner-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.75rem, 1vw, 0.9rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #b08d74;
+    margin-bottom: 16px;
+}
+
+.eid-banner-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #222;
+    letter-spacing: 0.05em;
+}
+
+.eid-banner-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    color: #5a4a42;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .eid-banner-container {
+        margin-top: 155px;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .eid-banner-title {
+        font-size: 1.8rem;
+    }
+
+    .eid-banner-description {
+        font-size: 0.95rem;
+    }
+}

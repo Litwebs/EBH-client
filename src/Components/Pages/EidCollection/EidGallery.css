@@ -1,0 +1,79 @@
+/* ── Gallery section ─────────────────────────────────────────────── */
+.eid-gallery {
+  padding: 0 5% 60px;
+  background-color: #fdfaf7;
+  text-align: center;
+}
+
+.eid-gallery__heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b08d74;
+  margin-bottom: 36px;
+}
+
+/* ── Carousel track ─────────────────────────────────────────────── */
+.eid-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+.eid-carousel__track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.45, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.eid-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.eid-carousel__slide img {
+  width: 100%;
+  height: clamp(480px, 70vw, 600px);
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Dots ───────────────────────────────────────────────────────── */
+.eid-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.eid-carousel__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(176, 141, 116, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.eid-carousel__dot.active {
+  background: #b08d74;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .eid-gallery {
+    padding: 40px 20px 60px;
+  }
+
+  .eid-carousel__btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+}

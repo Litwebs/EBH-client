@@ -14,9 +14,10 @@ import Funeral from "./Components/Pages/Funeral/Funral";
 import CookieConsent from "./Components/CookieConsent/CookieConsent";
 import Success from "./Components/Pages/Success/Success";
 import Cancelled from "./Components/Pages/Cancelled/Cancelled";
-import Error from "./Components/Pages/Error"; // <- adjust path
+import NoService from "./Components/Pages/NoService"; // <- adjust path
 import FleureExperience from "./Components/Pages/FleureExperience/FleureExperience";
 import Menu from "./Components/Pages/Menu/Menu";
+import EidCollection from "./Components/Pages/EidCollection/EidCollection";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -58,7 +59,7 @@ const App = () => {
 
       {/* while checking, render nothing or a loader */}
       {checking ? null : !isLive ? (
-        <Error />
+        <NoService />
       ) : (
         <>
           <Routes>
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/experience" element={<FleureExperience />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/eid-collection" element={<EidCollection />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancelled />} />
